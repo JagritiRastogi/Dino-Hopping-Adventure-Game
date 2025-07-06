@@ -1,0 +1,105 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	/*background-color: red;*/
+	overflow: hidden;
+}
+
+.gameContainer{
+	background-image: url(bg.avif);
+	background-repeat: no-repeat;
+	background-size: 100vw 100vh;
+	width: 100%;
+	height: 100vh;
+}
+
+#startText {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #333;
+  z-index: 10;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.dino{
+	background-image: url(dino.png);
+	background-repeat: no-repeat;
+	background-size: cover;	
+	width: 235px;
+	height: 200px;
+	/*border: 2px solid darkred;*/
+	position: absolute;
+	bottom: 0;
+	left: 52px;
+}
+
+.obstacle{
+	width: 235px;
+	height: 155px;
+	position: absolute;
+	bottom: 0;
+	right: 56px;
+	background: url(dinodan.png) no-repeat;
+	background-size: 100%;
+	/*border: 2px solid black;*/
+}
+
+.gameOver{
+	position: relative;
+	top: 30px;
+	font-family: sans-serif;
+	font-size: 53px;
+	text-align: center;
+	visibility: hidden;
+}
+
+#scoreCont{
+    font-weight: 900;
+    position: absolute;
+    left: 45px;
+    top: 31px;
+    border: 2px solid black;
+    padding: 10px;
+    font-family: sans-serif;
+}
+
+.animateDino{
+	animation: dino 0.6s linear;
+}
+
+@keyframes dino{
+	0%{
+       bottom: 0;
+	}
+	50%{
+        bottom: 422px;
+	}
+	100%{
+        bottom: 0;
+	}
+}
+
+.obstacleAni{
+	animation: obstacleAni 5s linear infinite;
+}
+
+@keyframes obstacleAni{
+	0%{
+		left: 100vw;
+	}
+	100%{
+		left: -10vw;
+	}
+}
